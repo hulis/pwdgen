@@ -65,7 +65,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="pwdgenmain.cpp" />
+    <ClCompile Include="Generator.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Pwdgen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Generator.h" />
+    <ClInclude Include="Pwdgen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
