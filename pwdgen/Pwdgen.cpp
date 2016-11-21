@@ -37,6 +37,7 @@ void Pwdgen::askLenght()
 		}
 
 	} while (pwdLenght < 8 || pwdLenght > 25);
+
 	system("cls");
 }
 
@@ -67,28 +68,28 @@ void Pwdgen::askOption()
 
 		//Kysyt‰‰n haluaako k‰ytt‰j‰ k‰ytt‰‰ salasanassa numeroita ja tallennetaan se muuttujaan
 		std::cout << "\nUse numbers?" << std::endl;
-		askOption();
+		optionCounter();
 		useNumber = userChoise;
 		securityLevel += useNumber;
 		//std::cout << useNumber;
 
 		//Kysyt‰‰n haluaako k‰ytt‰j‰ k‰ytt‰‰ salasanassa pieni‰ kirjaimia ja tallennetaan se muuttujaan
 		std::cout << "\nUse lower case letters?" << std::endl;
-		askOption();
+		optionCounter();
 		useLcase = userChoise;
 		securityLevel += useLcase;
 		//std::cout << useLcase;
 
 		//Kysyt‰‰n haluaako k‰ytt‰j‰ k‰ytt‰‰ salasanassa isoja kirjaimia ja tallennetaan se muuttujaan
 		std::cout << "\nUse upper case letters?" << std::endl;
-		askOption();
+		optionCounter();
 		useUcase = userChoise;
 		securityLevel += useUcase;
 		//std::cout << useUcase;
 
 		//Kysyt‰‰n haluaako k‰ytt‰j‰ k‰ytt‰‰ salasanassa erikoismerkkej‰ ja tallennetaan se muuttujaan
 		std::cout << "\nUse Special symbols?" << std::endl;
-		askOption();
+		optionCounter();
 		useSpecial = userChoise;
 		securityLevel += useSpecial;
 		//std::cout << securityLevel;
@@ -118,11 +119,11 @@ void Pwdgen::menu()
 	std::cout << "Next we are gonna choose options what we are gonna include in your password" << std::endl;
 	system("pause");
 	system("cls");
+	askOption();
 
 	//Generoidaan salasana
 	Generator pwd;
-	pwd.generatePWD();
-
+	pwd.generatePWD(pwdLenght, useNumber, useUcase, useLcase, useSpecial);
 	system("pause");
 
 	//Tulostetaan salasana

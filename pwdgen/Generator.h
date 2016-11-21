@@ -4,14 +4,15 @@ class Generator
 public:
 	Generator();
 	~Generator();
-	void generatePWD();
+	void generatePWD(int l, int un, int ul, int uu, int us);
 	void printPWD();
 
 private:
-	std::string special[32];
-	char number[10];
-	char lcase[26];
-	char ucase[26];
 	std::string password;
+	int pwdLenght = 0;
+	int useNumber = 0;
+	int useUcase = 0;
+	int useLcase = 0;
+	int useSpecial = 0;
 };
 
